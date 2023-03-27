@@ -33,6 +33,9 @@ function* fetchNewsHandler({ payload: { id, page } }: NewsHandler) {
     apiKey,
     page: page || "1",
   };
+
+  yield delay(300);
+
   try {
     const news: ApiResponse = yield call(
       getNewsFromApi<ApiResponse>,
