@@ -25,7 +25,7 @@ export const messages = {
       header: "Coś poszło nie tak...",
       message1: "Sprawdź połączenie z internetem",
       message2: "i spróbuj ponownie",
-      linkButton: "Wróć na stronę główną",
+      link: "Wróć na stronę główną",
     },
     loader: {
       paragraph1: "Proszę czekać,",
@@ -76,7 +76,7 @@ export const messages = {
       header: "Something went wrong...",
       message1: "Check your network connection",
       message2: "and try again",
-      linkButton: "Back to home page",
+      link: "Back to home page",
     },
     loader: {
       paragraph1: "Please wait,",
