@@ -54,7 +54,7 @@ export const Articles = ({
         </>
       )}
 
-      {title ? (
+      {!!title ? (
         <Title>
           {messages[language].articles.t.existantT} {title}
         </Title>
@@ -75,7 +75,7 @@ export const Articles = ({
           )}
         </>
       )}
-      {source.name ? (
+      {!!source.name ? (
         <Source>
           {messages[language].articles.source.existantSource} {source.name}
         </Source>
@@ -83,7 +83,7 @@ export const Articles = ({
         <Source>{messages[language].articles.source.nonExistantSource}</Source>
       )}
 
-      {publishedAt && (
+      {!!publishedAt && (
         <PublicationDate>
           {messages[language].articles.publicationDate}{" "}
           {new Date(publishedAt).toLocaleDateString(undefined, {
