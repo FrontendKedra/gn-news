@@ -6,7 +6,7 @@ import {
   DangerIcon,
   ErrorMessage,
   Header,
-  LinkButton,
+  Link,
 } from "./styled";
 
 export const Error = () => {
@@ -21,9 +21,7 @@ export const Error = () => {
         {messages[language].error.message1}
         <br /> {messages[language].error.message2}
       </ErrorMessage>
-      <LinkButton as="a" href="">
-        {messages[language].error.linkButton}
-      </LinkButton>
+      <Link to={"/"}>{messages[language].error.link}</Link>
     </Container>
   );
 };

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as Danger } from "./icons/danger.svg";
 
@@ -94,7 +95,7 @@ export const ErrorMessage = styled.span`
   }
 `;
 
-export const LinkButton = styled.button`
+export const Link = styled(NavLink)`
   font-weight: 500;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.white};
@@ -103,7 +104,6 @@ export const LinkButton = styled.button`
   display: flex;
   align-items: center;
   padding: 10px;
-  text-decoration: none;
   transition: 0.2s;
 
   &:hover {
