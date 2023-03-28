@@ -33,7 +33,10 @@ export const Articles = ({
   const isEnglish = useSelector(selectIsEnglish);
   const language = isEnglish ? "en" : "pl";
 
-  return (
+  return (isListView && (title && source.name && publishedAt) === undefined) ||
+    (!isListView &&
+      (title && source.name && publishedAt && description) ===
+        undefined) ? null : (
     <TileList
       isList={isListView}
       onClick={() => {
@@ -80,9 +83,9 @@ export const Articles = ({
         <Source>{messages[language].articles.source.nonExistantSource}</Source>
       )}
 
-      {PublicationDate && (
+      {publishedAt && (
         <PublicationDate>
-          {messages[language].articles.publicationDate}
+          {messages[language].articles.publicationDate}{" "}
           {new Date(publishedAt).toLocaleDateString(undefined, {
             weekday: "long",
             day: "numeric",
