@@ -19,6 +19,7 @@ import { PopupContent } from "../../common/Popup";
 import { Articles } from "./Articles";
 import { Loader } from "./Loader";
 import { Error } from "./Error";
+import { NoArticles } from "./NoArticles";
 
 interface Id {
   id: string;
@@ -40,7 +41,9 @@ export const Main = () => {
     case "loading":
       return <Loader />;
     case "success":
-      return (
+      return articles.length === 0 ? (
+        <NoArticles />
+      ) : (
         <Container isList={isListView}>
           {articles.map(
             ({
