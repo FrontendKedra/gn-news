@@ -31,6 +31,7 @@ export const messages = {
       paragraph1: "Proszę czekać,",
       paragraph2: "newsy są ładowane...",
     },
+    noArticles: "Nie znaleziono artykułów",
     footer: "Liczba artykułów:",
     pagination: {
       previous: "Poprzednia",
@@ -82,6 +83,7 @@ export const messages = {
       paragraph1: "Please wait,",
       paragraph2: "news are being loaded...",
     },
+    noArticles: "No articles found",
     footer: "Number of articles:",
     pagination: {
       previous: "Previous",
