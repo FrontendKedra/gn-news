@@ -27,7 +27,7 @@ export const Header = () => {
   const language = isEnglish ? "en" : "pl";
 
   return (
-    <Container>
+    <Container data-testid="header">
       <Title to="/">gnNews</Title>
       <PopUp onClick={() => dispatch(toggleNewsPopup())}>
         {messages[language].header.popup}
