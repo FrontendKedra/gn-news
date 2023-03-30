@@ -8,7 +8,7 @@ export const NoArticles = () => {
   const language = isEnglish ? "en" : "pl";
 
   return (
-    <Container>
+    <Container data-testid="no-articles">
       <NoArticlesParagraph>{messages[language].noArticles}</NoArticlesParagraph>
     </Container>
   );

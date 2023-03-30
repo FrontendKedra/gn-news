@@ -14,7 +14,7 @@ export const Error = () => {
   const language = isEnglish ? "en" : "pl";
 
   return (
-    <Container>
+    <Container data-testid="error">
       <DangerIcon />
       <Header>{messages[language].error.header}</Header>
       <ErrorMessage>

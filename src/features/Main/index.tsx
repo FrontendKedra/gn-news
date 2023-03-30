@@ -44,7 +44,7 @@ export const Main = () => {
       return articles.length === 0 ? (
         <NoArticles />
       ) : (
-        <Container isList={isListView}>
+        <Container isList={isListView} data-testid="articles">
           {articles.map(
             ({
               title,

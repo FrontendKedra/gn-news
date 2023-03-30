@@ -8,7 +8,7 @@ export const Loader = () => {
   const language = isEnglish ? "en" : "pl";
 
   return (
-    <Container>
+    <Container data-testid="loader">
       <LoadingParagraph>
         {messages[language].loader.paragraph1}
         <br />
