@@ -33,10 +33,9 @@ export const Articles = ({
   const isEnglish = useSelector(selectIsEnglish);
   const language = isEnglish ? "en" : "pl";
 
-  return (isListView && (title && source.name && publishedAt) === undefined) ||
+  return (isListView && (!title && !source.name && !publishedAt)) ||
     (!isListView &&
-      (title && source.name && publishedAt && description) ===
-        undefined) ? null : (
+      (!title && !source.name && !publishedAt && !description) ) ? null : (
     <TileList
       isList={isListView}
       onClick={() => {
@@ -55,36 +54,40 @@ export const Articles = ({
       )}
 
       {!!title ? (
-        <Title>
+        <Title data-testid="existant-title">
           {messages[language].articles.t.existantT} {title}
         </Title>
       ) : (
-        <Title>{messages[language].articles.t.nonExistantT}</Title>
+        <Title data-testid="non-existant-title">
+          {messages[language].articles.t.nonExistantT}
+        </Title>
       )}
 
       {!isListView && (
         <>
           {!!description ? (
-            <Teaser>
+            <Teaser data-testid="existant-teaser">
               {messages[language].articles.teaser.existantTeaser} {description}
             </Teaser>
           ) : (
-            <Teaser>
+            <Teaser data-testid="non-existant-teaser">
               {messages[language].articles.teaser.nonExistantTeaser} {author}
             </Teaser>
           )}
         </>
       )}
       {!!source.name ? (
-        <Source>
+        <Source data-testid="existant-source.name">
           {messages[language].articles.source.existantSource} {source.name}
         </Source>
       ) : (
-        <Source>{messages[language].articles.source.nonExistantSource}</Source>
+        <Source data-testid="non-existant-source.name">
+          {messages[language].articles.source.nonExistantSource}
+        </Source>
       )}
 
       {!!publishedAt && (
-        <PublicationDate>
+        <PublicationDate data-testid="existant-publishedAt">
           {messages[language].articles.publicationDate}{" "}
           {new Date(publishedAt).toLocaleDateString(undefined, {
             weekday: "long",

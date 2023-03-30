@@ -6,18 +6,18 @@ export interface ApiResponse {
 
 export interface Article {
   source: Source;
-  author: string;
-  title: string;
+  author: string | null;
+  title: string | null;
   description: string | null;
-  url: string;
+  url: string | null;
   urlToImage: string | null;
-  publishedAt: Date;
+  publishedAt: string | null;
   content: string | null;
 }
 
 export interface Source {
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export type UsePageNumber = [number, (pageNumber: number) => void];
