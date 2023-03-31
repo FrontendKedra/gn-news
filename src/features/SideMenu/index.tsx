@@ -7,14 +7,14 @@ import { messages } from "../../common/Locale/messages";
 export const SideMenu = () => {
   const isEnglish = useSelector(selectIsEnglish);
   const language = isEnglish ? "en" : "pl";
-  
+
   return (
     <Container>
       {(isEnglish ? countriesEnglish : countriesPolish).map(
-        ({ name, code, flag }) => (
-          <CountryContainer to={`/country/${code}`} key={name}>
+        ({ displayName, codeName, flag }) => (
+          <CountryContainer to={`/country/${codeName}`} key={displayName}>
             <Flag src={flag} alt={messages[language].alt} />
-            <Country key={code}>{name}</Country>
+            <Country>{displayName}</Country>
           </CountryContainer>
         )
       )}

@@ -20,6 +20,7 @@ import { Articles } from "./Articles";
 import { Loader } from "./Loader";
 import { Error } from "./Error";
 import { NoArticles } from "./NoArticles";
+import { countryCodes } from "./countryCodes";
 
 interface Id {
   id: string;
@@ -32,10 +33,11 @@ export const Main = () => {
   const isListView = useSelector(selectIsList);
   const page = useUrlParameter("page");
   const isNewsPopup = useSelector(selectIsNewsPopup);
+  const code = countryCodes[id];
 
   useEffect(() => {
-    dispatch(fetchNews({ id, page }));
-  }, [id, page, dispatch]);
+    dispatch(fetchNews({ code, page }));
+  }, [code, page, dispatch]);
 
   switch (status) {
     case "loading":

@@ -17,7 +17,7 @@ function App() {
             <Main />
           </Route>
           <Route path="/">
-            <Redirect to="/country/pl" />
+            <Redirect to="/country/Poland" />
           </Route>
         </Switch>
       </AppContainer>

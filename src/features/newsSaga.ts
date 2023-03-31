@@ -22,14 +22,14 @@ import { saveBooleanInLocalStorage } from "./booleanLocalStorage";
 
 interface NewsHandler {
   payload: {
-    id: string;
+    code: string;
     page: string | null;
   };
 }
 
-function* fetchNewsHandler({ payload: { id, page } }: NewsHandler) {
+function* fetchNewsHandler({ payload: { code, page } }: NewsHandler) {
   const params = {
-    country: id,
+    country: code,
     apiKey,
     page: page || "1",
   };
