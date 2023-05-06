@@ -1,7 +1,7 @@
 import { IndexSingature } from "./common/interfaces/interface";
 
 export interface Theme {
-  color: IndexSingature;
+  colors: IndexSingature;
   breakpoints: IndexSingature;
 }
 
