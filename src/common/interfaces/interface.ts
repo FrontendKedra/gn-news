@@ -36,3 +36,7 @@ export interface IsList {
 export interface IndexSingature {
   [index: string]: string;
 }
+
+export interface Id {
+  id: string;
+}

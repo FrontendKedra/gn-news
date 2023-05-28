@@ -21,10 +21,8 @@ import { Loader } from "./Loader";
 import { Error } from "./Error";
 import { NoArticles } from "./NoArticles";
 import { countryCodes } from "./countryCodes";
+import { Id } from "../../common/interfaces/interface";
 
-interface Id {
-  id: string;
-}
 export const Main = () => {
   const { id } = useParams<Id>();
   const dispatch = useDispatch();
